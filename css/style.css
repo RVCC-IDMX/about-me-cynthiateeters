@@ -1,94 +1,99 @@
 body {
-    font-family:Roboto;
-    background-color: #EDBA61;
-    color:#3267A1;
+  font-family: Roboto;
+  background-color: #edba61;
+  color: #3267a1;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family:"Grenze Gotisch";
-    text-align:center;
-    font-size:40pt;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Grenze Gotisch";
+  text-align: center;
+  font-size: 40pt;
 }
 
 header {
-    text-align:center;
+  text-align: center;
 }
 
-#hero, footer {
-    color:#82BEFF;
-    border: 2px solid #61A5ED;
-    background-color:#A3721C;
-    text-align:center;
-    padding:10px;
+#hero,
+footer {
+  color: #82beff;
+  border: 2px solid #61a5ed;
+  background-color: #a3721c;
+  text-align: center;
+  padding: 10px;
 }
 
 /* Hero Section */
 
 #hero img {
-    width:300px;
+  width: 300px;
 }
 
 /* Bio Section */
 
 #bio {
-    text-align:center;
+  text-align: center;
 }
 
 /* Hobbies */
 
 #hobbies ul li:nth-child(even) {
-    color:#000;
+  color: #000;
 }
 
 /* Gallery */
 
 #gallery {
-    border: 2px solid #61A5ED;
-    margin-bottom:2rem;
+  border: 2px solid #61a5ed;
+  margin-bottom: 2rem;
 }
 
 #gallery img {
-    max-width:100%;
+  max-width: 100%;
 }
 
 #gallery figure {
-    text-align:center;
+  text-align: center;
 }
 
 /* Literature */
 #lit {
-    border: 2px solid #61A5ED;
-    margin-bottom:2rem;
+  border: 2px solid #61a5ed;
+  margin-bottom: 2rem;
 }
 
 #lit div {
-    padding:2rem;
-    max-width: 40rem;
-    margin: 0 auto;
+  padding: 2rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 #lit div p {
-    padding: 0.3rem 0;
-    clear:both;
+  padding: 0.3rem 0;
+  clear: both;
 }
 
 /* Dropcaps */
 
-#lit div p:nth-child(3n+1):first-letter { 
-    color:#3267A1;
-    background-image:radial-gradient(#FFF, #A3721C);
-    float:left;
-    font-size:3em;
-    padding:.25em;
-    margin-right:.25em;
-    line-height:.65;
-    border:4px outset #3267A1;
-    text-shadow:2px 2px 3px rgba(0,0,0,.5);
-    box-shadow:5px 5px 5px rgba(0,0,0,.5);
-    border-top-left-radius: .2em;
-    border-bottom-right-radius: .2em;
+#lit div p:nth-child(3n + 1):first-letter {
+  color: #3267a1;
+  background-image: radial-gradient(#fff, #a3721c);
+  float: left;
+  font-size: 3em;
+  padding: 0.25em;
+  margin-right: 0.25em;
+  line-height: 0.65;
+  border: 4px outset #3267a1;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
 }
-
 
 /* CSS Grid */
 
@@ -98,47 +103,74 @@ header {
 */
 
 @media screen and (min-width: 60rem) {
-
-    #gallery figure{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-
-    /* 
-      use flex to center horizontally and vertically
+  /* 
+      make each figure a grid with 2 children
+      the image gets 66.67% of width 
+      and figcaption gets 33.33%
     */
 
-    figcaption {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-    }
+  #gallery figure {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
 
-    hr {
-        display: none
-    }
+  /* 
+    use flex to center horizontally and vertically
+    bump up font-size
+  */
 
+  figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
 
+  /* 
+    hr elements looks weird as a child of a column grid
+    so remove them completely from normal flow
+  */
+
+  hr {
+    display: none;
+  }
 }
 
 /* laptop size */
 
 @media screen and (min-width: 80rem) {
-    #gallery figure{
-        grid-template-columns: 1fr;
-    }
+  /* 
+    move the figure element back to 
+    figcaption under image by changing 
+    figure back to 1-column grid
+  */
 
-     #gallery {
-         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  #gallery figure {
+    grid-template-columns: 1fr;
+  }
 
-    #gallery h2 {
-        grid-column: 1/4;
-    }
+  /*
+    make gallery a 3-column grid
+  */
 
-    figcaption {
-        font-size: 1.5rem;
-    }
+  #gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* 
+    have h2 span full width by using -1 line
+  */
+
+  #gallery h2 {
+    grid-column: 1/-1;
+  }
+
+  /* 
+    reduce font-size of figcaption
+  */
+
+  figcaption {
+    font-size: 1.8rem;
+  }
 }
