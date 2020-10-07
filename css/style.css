@@ -98,6 +98,13 @@ footer {
 /* CSS Grid */
 
 /* 
+  first media query is no query at all
+
+  for layout, all the rule sets above 
+  should work on mobile sizes
+*/
+
+/* 
   tablet size 
   put figcaption to the right of the image
 */
@@ -136,7 +143,12 @@ footer {
   }
 }
 
-/* laptop size */
+/* 
+  laptop size 
+
+  put figcaption back under the image
+  and have all 3 images on one row
+*/
 
 @media screen and (min-width: 80rem) {
   /* 
