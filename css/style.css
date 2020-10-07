@@ -95,6 +95,14 @@ footer {
   border-bottom-right-radius: 0.2em;
 }
 
+/*
+  increase font-size on figcaption
+*/
+
+figcaption {
+    font-size: 2rem;
+}
+
 /* CSS Grid */
 
 /* 
@@ -123,14 +131,14 @@ footer {
 
   /* 
     use flex to center horizontally and vertically
-    bump up font-size
+    & bump up font-size
   */
 
   figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   /* 
